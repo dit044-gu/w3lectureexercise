@@ -1,3 +1,5 @@
+package mystery_box;
+
 public class Mystery {
     // What does this method do?
     int x(int[] l) {

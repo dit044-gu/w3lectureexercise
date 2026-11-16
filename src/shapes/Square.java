@@ -1,8 +1,10 @@
+package shapes;
+
 import java.awt.*;
 
 public class Square extends Polygon {
-    public Square(int x, int y, DrawPolygons drawer) {
-        super(x,y,drawer);
+    public Square(int x, int y) {
+        super(x,y);
     }
 
    @Override

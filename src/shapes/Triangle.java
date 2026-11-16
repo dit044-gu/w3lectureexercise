@@ -1,11 +1,13 @@
+package shapes;
+
 import java.awt.*;
 
 /**
  * Created by Niklas on 2016-01-19.
  */
 public class Triangle extends Polygon {
-    public Triangle(int x, int y, DrawPolygons drawer) {
-        super(x,y,drawer);
+    public Triangle(int x, int y) {
+        super(x,y);
     }
 
     @Override

@@ -1,19 +1,31 @@
+import shapes.Rectangle;
+import shapes.Square;
+import shapes.Triangle;
+import shapes.Polygon;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class DrawPolygons extends JComponent {
-    public ArrayList<Polygon> polygons;
+    public List<Polygon> polygons; // DIP dependency inversion principle
+    /*
+       Instead of depending on a concrete class (ArrayList),
+       we're depending on an interface that ArrayList implements
+       (called List)
+       interfaces are more abstract than the classes that implement them
+     */
     public boolean direction = true;
     public int ticker = 0;
-    public JFrame frame;
+    private Frame frame;
 
     public DrawPolygons() {
         polygons = new ArrayList<>(10);
 
-        polygons.add(new Square(50,50,this));
-        polygons.add(new Triangle(100,100,this));
-        polygons.add(new Rectangle(50,150,this));
+        polygons.add(new Square(50,50));
+        polygons.add(new Triangle(100,100));
+        polygons.add(new Rectangle(50,150));
     }
 
     public void update() {
@@ -22,6 +34,7 @@ public class DrawPolygons extends JComponent {
         for (Polygon p: polygons) {
             p.updateCenter(p.centerPoint.x+value, p.centerPoint.y+value);
         }
+        frame.repaint();
 
         if (ticker > 10) {
             direction = !direction;

@@ -1,8 +1,10 @@
+package shapes;
+
 import java.awt.*;
 
 public class Rectangle extends Polygon {
-    public Rectangle(int x, int y, DrawPolygons drawer) {
-        super(x, y, drawer);
+    public Rectangle(int x, int y) {
+        super(x, y);
     }
 
     public void paint(Graphics g){
